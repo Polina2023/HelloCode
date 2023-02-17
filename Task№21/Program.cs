@@ -1,0 +1,17 @@
+﻿Console.Write("Ввести координату x1: ");
+int x1 = int.Parse(Console.ReadLine()!);
+Console.Write("Ввести координату y1: ");
+int y1 = int.Parse(Console.ReadLine()!);
+Console.Write("Ввести координату z1: ");
+int z1 = int.Parse(Console.ReadLine()!);
+Console.Write("Ввести координату x2: ");
+int x2 = int.Parse(Console.ReadLine()!);
+Console.Write("Ввести координату y2: ");
+int y2 = int.Parse(Console.ReadLine()!);
+Console.Write("Ввести координату z2:");
+int z2 = int.Parse(Console.ReadLine()!);
+int A =(x2-x1)*(x2-x1);
+int B =(y2-y1)*(y2-y1);
+int C =(z2-z1)*(z2-z1);
+double ABC = Math.Sqrt(A+B+C);
+Console.WriteLine(ABC);
