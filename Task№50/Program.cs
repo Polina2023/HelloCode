@@ -23,7 +23,7 @@ int GetCols(){
     return cols;
 }
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
+/*int[,] GetArray(int m, int n, int minValue, int maxValue)
 {
     int[,] result = new int[m,n];
     for(int i = 0; i<m;i++)
@@ -64,5 +64,45 @@ int columns = int.Parse(Console.ReadLine());
 
 int[,] array = GetArray(rows, columns, 0, 10);
 
-GetMatrix(array);
+GetMatrix(array);*/
 
+
+int[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+int[,] result = new int[m, n];
+for (int i = 0; i < m; i++)
+{
+for (int j = 0; j < n; j++)
+{
+result[i, j] = new Random().Next(minValue, maxValue);
+Console.Write($"{result[i, j]} ");
+}
+Console.WriteLine();
+}
+return result;
+}
+void GetMatrix(int[,] matrix, int rows, int cols)
+{
+if (rows < matrix.GetLength(0) && rows >= 0 && cols < matrix.GetLength(1) && cols >= 0)
+{
+Console.WriteLine($"по индексам [{rows}, {cols}] находится элемент {matrix[rows, cols]}");
+}
+else
+{
+Console.WriteLine($"[{rows}, {cols}] -> по данным индексам такого числа в массиве нет");
+}
+}
+
+Console.Write("Введите количество строк массива: ");
+int rows = int.Parse(Console.ReadLine());
+
+Console.Write("Введите количество столбцов массива: ");
+int columns = int.Parse(Console.ReadLine());
+
+int[,] array = GetArray(rows, columns, 0, 10);
+Console.Write("Введите индекс строки массива для поиска элемента: ");
+int rowsFind = int.Parse(Console.ReadLine());
+
+Console.Write("Введите индекс столбца массива для поиска элемента: ");
+int columnsFind = int.Parse(Console.ReadLine());
+GetMatrix(array, rowsFind, columnsFind);
